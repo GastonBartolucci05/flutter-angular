@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/core/widgets/error_view.dart';
+import 'package:flutter_app/features/products/presentation/product_detail_screen.dart';
 import 'package:flutter_app/features/products/presentation/product_tile.dart';
 import 'package:flutter_app/features/products/presentation/products_notifier.dart';
 import 'package:flutter_app/features/products/presentation/search_field.dart';
@@ -26,7 +27,16 @@ class ProductsScreen extends ConsumerWidget {
                 return ListView.builder(
                   itemCount: products.length,
                   itemBuilder: (context, index) {
-                    return ProductTile(product: products[index]);
+                    return ProductTile(
+                      product: products[index],
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => ProductDetailScreen(
+                            productId: products[index].id,
+                          ),
+                        ),
+                      ),
+                    );
                   },
                 );
               },

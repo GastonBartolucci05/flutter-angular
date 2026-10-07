@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/features/products/domain/product.dart';
 
 class ProductTile extends StatelessWidget {
-  const ProductTile({super.key, required this.product});
+  const ProductTile({super.key, required this.product, required this.onTap});
 
   final Product product;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: onTap,
       leading: Image.network(product.thumbnail, width: 50, height: 50),
       title: Text(product.title),
       subtitle: Row(
