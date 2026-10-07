@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/features/cart/presentation/add_to_cart_button.dart';
 import 'package:flutter_app/features/products/domain/product.dart';
 
 class ProductDetailContent extends StatelessWidget {
@@ -37,6 +38,8 @@ class ProductDetailContent extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(product.category),
+            const SizedBox(height: 16),
+            AddToCartButton(product: product),
           ],
         ),
       ),

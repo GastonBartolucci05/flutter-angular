@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/core/widgets/error_view.dart';
+import 'package:flutter_app/features/cart/presentation/cart_icon_button.dart';
 import 'package:flutter_app/features/products/presentation/product_detail_screen.dart';
 import 'package:flutter_app/features/products/presentation/product_tile.dart';
 import 'package:flutter_app/features/products/presentation/products_notifier.dart';
@@ -14,7 +15,10 @@ class ProductsScreen extends ConsumerWidget {
     final productsAsync = ref.watch(productsProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Products')),
+      appBar: AppBar(
+        title: const Text('Products'),
+        actions: const [CartIconButton()],
+      ),
       body: Column(
         children: [
           const SearchField(),
