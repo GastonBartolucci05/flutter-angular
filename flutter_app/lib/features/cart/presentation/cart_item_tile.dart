@@ -18,7 +18,12 @@ class CartItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Image.network(cartItem.product.thumbnail, width: 50, height: 50),
+      leading: Image.network(
+        cartItem.product.thumbnail,
+        width: 50,
+        height: 50,
+        errorBuilder: (_, _, _) => const Icon(Icons.image_not_supported),
+      ),
       title: Text(cartItem.product.title),
       subtitle: Text('\$${cartItem.subtotal.toStringAsFixed(2)}'),
       trailing: Row(

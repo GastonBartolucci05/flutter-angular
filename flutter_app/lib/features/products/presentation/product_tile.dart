@@ -11,7 +11,12 @@ class ProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      leading: Image.network(product.thumbnail, width: 50, height: 50),
+      leading: Image.network(
+        product.thumbnail,
+        width: 50,
+        height: 50,
+        errorBuilder: (_, _, _) => const Icon(Icons.image_not_supported),
+      ),
       title: Text(product.title),
       subtitle: Row(
         children: [

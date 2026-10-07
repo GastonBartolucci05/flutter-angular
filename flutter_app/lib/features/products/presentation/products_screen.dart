@@ -46,7 +46,7 @@ class ProductsScreen extends ConsumerWidget {
               },
               loading: () => const Center(child: CircularProgressIndicator()),
               error: (error, _) => ErrorView(
-                message: "No se pudieron cargar los productos",
+                message: "The products could not be loaded.",
                 onRetry: () => ref.invalidate(productsProvider),
               ),
             ),
