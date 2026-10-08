@@ -13,4 +13,7 @@ export class OrdersService {
     getOrders(): Observable<Order[]> {
         return this.http.get<OrderResponse>(ORDERS_URL).pipe(map((response) => response.carts));
     }
+    getOrder(id: number): Observable<Order> {
+        return this.http.get<Order>('${ORDERS_URL}/${id}');
+    }
 }
