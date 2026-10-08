@@ -18,7 +18,7 @@ class ProductDetailScreen extends ConsumerWidget {
         data: (product) => ProductDetailContent(product: product),
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (error, _) => ErrorView(
-          message: "No se pudo cargar el producto",
+          message: "The product could not be loaded.",
           onRetry: () => ref.invalidate(productDetailProvider(productId)),
         ),
       ),
